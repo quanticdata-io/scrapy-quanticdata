@@ -1,0 +1,27 @@
+{
+  "type": "response",
+  "message": "Unlocker request successful",
+  "payload": {
+    "request_id": "req_example_0003",
+    "status": 403,
+    "headers": {
+      "content-type": "text/html; charset=utf-8"
+    },
+    "body": "<!doctype html><html><head><title>Access denied</title></head><body><p>Please verify you are a human</p></body></html>",
+    "bodyBase64": "PCFkb2N0eXBlIGh0bWw+PGh0bWw+PGhlYWQ+PHRpdGxlPkFjY2VzcyBkZW5pZWQ8L3RpdGxlPjwvaGVhZD48Ym9keT48cD5QbGVhc2UgdmVyaWZ5IHlvdSBhcmUgYSBodW1hbjwvcD48L2JvZHk+PC9odG1sPg==",
+    "finalUrl": "https://example.com/pricing",
+    "contentType": "text/html; charset=utf-8",
+    "attempts": 4,
+    "blocked": true,
+    "blockReason": "js_challenge",
+    "blockClass": "js_challenge",
+    "hint": "Try tier \"mobile\" or another country.",
+    "rendered": true,
+    "escalated": true,
+    "mode": "auto",
+    "tier_served": "browser",
+    "format": "html",
+    "tier": "premium"
+  },
+  "pagination": {}
+}

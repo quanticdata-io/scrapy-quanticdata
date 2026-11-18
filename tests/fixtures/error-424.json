@@ -1,0 +1,11 @@
+{
+  "type": "error",
+  "message": "The target refused the request on every tier.",
+  "payload": {
+    "code": "target_blocked",
+    "retryable": true,
+    "billed": true,
+    "blockClass": "js_challenge",
+    "attempts": 4
+  }
+}

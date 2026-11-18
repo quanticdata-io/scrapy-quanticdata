@@ -1,0 +1,52 @@
+{
+  "type": "response",
+  "message": "Unlocker request successful",
+  "payload": {
+    "request_id": "req_example_0001",
+    "latency_ms": 2291,
+    "mode": "auto",
+    "tier_served": "tls",
+    "format": "html",
+    "status": 200,
+    "headers": {
+      "content-type": [
+        "text/html; charset=utf-8"
+      ],
+      "date": [
+        "Wed, 18 Nov 2026 14:00:10 GMT"
+      ],
+      "set-cookie": [
+        "session=example; Path=/"
+      ]
+    },
+    "body": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n\t<meta charset=\"UTF-8\">\n\t<title>Quotes to Scrape</title>\n</head>\n<body>\n    <div class=\"container\">\n<div class=\"row\">\n    <div class=\"col-md-8\">\n\n    <div class=\"quote\" itemscope itemtype=\"http://schema.org/CreativeWork\">\n        <span class=\"text\" itemprop=\"text\">“It takes a great deal of bravery to stand up to our enemies, but just as much to stand up to our friends.”</span>\n        <span>by <small class=\"author\" itemprop=\"author\">J.K. Rowling</small>\n        <a href=\"/author/J-K-Rowling\">(about)</a>\n        </span>\n        <div class=\"tags\">\n            Tags:\n            <a class=\"tag\" href=\"/tag/courage/page/1/\">courage</a>\n            <a class=\"tag\" href=\"/tag/friends/page/1/\">friends</a>\n        </div>\n    </div>\n\n    <div class=\"quote\" itemscope itemtype=\"http://schema.org/CreativeWork\">\n        <span class=\"text\" itemprop=\"text\">“If you can&#39;t explain it to a six year old, you don&#39;t understand it yourself.”</span>\n        <span>by <small class=\"author\" itemprop=\"author\">Albert Einstein</small>\n        <a href=\"/author/Albert-Einstein\">(about)</a>\n        </span>\n        <div class=\"tags\">\n            Tags:\n            <a class=\"tag\" href=\"/tag/simplicity/page/1/\">simplicity</a>\n            <a class=\"tag\" href=\"/tag/understand/page/1/\">understand</a>\n        </div>\n    </div>\n\n    <nav>\n        <ul class=\"pager\">\n            <li class=\"previous\">\n                <a href=\"/page/1/\"><span aria-hidden=\"true\">&larr;</span> Previous</a>\n            </li>\n            <li class=\"next\">\n                <a href=\"/page/3/\">Next <span aria-hidden=\"true\">&rarr;</span></a>\n            </li>\n        </ul>\n    </nav>\n    </div>\n</div>\n    </div>\n</body>\n</html>\n",
+    "bodyBase64": "PCFET0NUWVBFIGh0bWw+CjxodG1sIGxhbmc9ImVuIj4KPGhlYWQ+Cgk8bWV0YSBjaGFyc2V0PSJVVEYtOCI+Cgk8dGl0bGU+UXVvdGVzIHRvIFNjcmFwZTwvdGl0bGU+CjwvaGVhZD4KPGJvZHk+CiAgICA8ZGl2IGNsYXNzPSJjb250YWluZXIiPgo8ZGl2IGNsYXNzPSJyb3ciPgogICAgPGRpdiBjbGFzcz0iY29sLW1kLTgiPgoKICAgIDxkaXYgY2xhc3M9InF1b3RlIiBpdGVtc2NvcGUgaXRlbXR5cGU9Imh0dHA6Ly9zY2hlbWEub3JnL0NyZWF0aXZlV29yayI+CiAgICAgICAgPHNwYW4gY2xhc3M9InRleHQiIGl0ZW1wcm9wPSJ0ZXh0Ij7igJxJdCB0YWtlcyBhIGdyZWF0IGRlYWwgb2YgYnJhdmVyeSB0byBzdGFuZCB1cCB0byBvdXIgZW5lbWllcywgYnV0IGp1c3QgYXMgbXVjaCB0byBzdGFuZCB1cCB0byBvdXIgZnJpZW5kcy7igJ08L3NwYW4+CiAgICAgICAgPHNwYW4+YnkgPHNtYWxsIGNsYXNzPSJhdXRob3IiIGl0ZW1wcm9wPSJhdXRob3IiPkouSy4gUm93bGluZzwvc21hbGw+CiAgICAgICAgPGEgaHJlZj0iL2F1dGhvci9KLUstUm93bGluZyI+KGFib3V0KTwvYT4KICAgICAgICA8L3NwYW4+CiAgICAgICAgPGRpdiBjbGFzcz0idGFncyI+CiAgICAgICAgICAgIFRhZ3M6CiAgICAgICAgICAgIDxhIGNsYXNzPSJ0YWciIGhyZWY9Ii90YWcvY291cmFnZS9wYWdlLzEvIj5jb3VyYWdlPC9hPgogICAgICAgICAgICA8YSBjbGFzcz0idGFnIiBocmVmPSIvdGFnL2ZyaWVuZHMvcGFnZS8xLyI+ZnJpZW5kczwvYT4KICAgICAgICA8L2Rpdj4KICAgIDwvZGl2PgoKICAgIDxkaXYgY2xhc3M9InF1b3RlIiBpdGVtc2NvcGUgaXRlbXR5cGU9Imh0dHA6Ly9zY2hlbWEub3JnL0NyZWF0aXZlV29yayI+CiAgICAgICAgPHNwYW4gY2xhc3M9InRleHQiIGl0ZW1wcm9wPSJ0ZXh0Ij7igJxJZiB5b3UgY2FuJiMzOTt0IGV4cGxhaW4gaXQgdG8gYSBzaXggeWVhciBvbGQsIHlvdSBkb24mIzM5O3QgdW5kZXJzdGFuZCBpdCB5b3Vyc2VsZi7igJ08L3NwYW4+CiAgICAgICAgPHNwYW4+YnkgPHNtYWxsIGNsYXNzPSJhdXRob3IiIGl0ZW1wcm9wPSJhdXRob3IiPkFsYmVydCBFaW5zdGVpbjwvc21hbGw+CiAgICAgICAgPGEgaHJlZj0iL2F1dGhvci9BbGJlcnQtRWluc3RlaW4iPihhYm91dCk8L2E+CiAgICAgICAgPC9zcGFuPgogICAgICAgIDxkaXYgY2xhc3M9InRhZ3MiPgogICAgICAgICAgICBUYWdzOgogICAgICAgICAgICA8YSBjbGFzcz0idGFnIiBocmVmPSIvdGFnL3NpbXBsaWNpdHkvcGFnZS8xLyI+c2ltcGxpY2l0eTwvYT4KICAgICAgICAgICAgPGEgY2xhc3M9InRhZyIgaHJlZj0iL3RhZy91bmRlcnN0YW5kL3BhZ2UvMS8iPnVuZGVyc3RhbmQ8L2E+CiAgICAgICAgPC9kaXY+CiAgICA8L2Rpdj4KCiAgICA8bmF2PgogICAgICAgIDx1bCBjbGFzcz0icGFnZXIiPgogICAgICAgICAgICA8bGkgY2xhc3M9InByZXZpb3VzIj4KICAgICAgICAgICAgICAgIDxhIGhyZWY9Ii9wYWdlLzEvIj48c3BhbiBhcmlhLWhpZGRlbj0idHJ1ZSI+JmxhcnI7PC9zcGFuPiBQcmV2aW91czwvYT4KICAgICAgICAgICAgPC9saT4KICAgICAgICAgICAgPGxpIGNsYXNzPSJuZXh0Ij4KICAgICAgICAgICAgICAgIDxhIGhyZWY9Ii9wYWdlLzMvIj5OZXh0IDxzcGFuIGFyaWEtaGlkZGVuPSJ0cnVlIj4mcmFycjs8L3NwYW4+PC9hPgogICAgICAgICAgICA8L2xpPgogICAgICAgIDwvdWw+CiAgICA8L25hdj4KICAgIDwvZGl2Pgo8L2Rpdj4KICAgIDwvZGl2Pgo8L2JvZHk+CjwvaHRtbD4K",
+    "finalUrl": "https://quotes.toscrape.com/page/2/",
+    "contentType": "text/html; charset=utf-8",
+    "attempts": 1,
+    "attempt_log": [
+      {
+        "tier": "tls",
+        "outcome": "ok",
+        "ms": 2168,
+        "bytes": 13745
+      }
+    ],
+    "cache": "off",
+    "blocked": false,
+    "rendered": false,
+    "escalated": false,
+    "tier": "premium",
+    "geo": {
+      "country": "us",
+      "state": null,
+      "city": null,
+      "rotation": "rotating"
+    },
+    "cost": {
+      "bytes": 13745,
+      "billed": true
+    }
+  },
+  "pagination": {}
+}

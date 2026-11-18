@@ -1,0 +1,35 @@
+name: Bug report
+description: Wrong response, an error or a crash
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: Never paste an API key. Replace it with `qd_live_...`. Remove request ids and personal data from logs.
+  - type: dropdown
+    id: backend
+    attributes:
+      label: Backend
+      options: [unlock, extract]
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: scrapy-quanticdata, Scrapy, Python and OS versions
+      placeholder: 0.1.0, Scrapy 2.13, Python 3.12, Ubuntu 24.04
+    validations:
+      required: true
+  - type: textarea
+    id: settings
+    attributes:
+      label: QUANTICDATA_* settings and the request meta
+      render: python
+    validations:
+      required: true
+  - type: textarea
+    id: result
+    attributes:
+      label: What happened and what you expected
+      description: Include the traceback or the log lines of the failing request.
+    validations:
+      required: true

@@ -1,0 +1,27 @@
+{
+  "type": "response",
+  "message": "Extraction successful",
+  "payload": {
+    "url": "https://quotes.toscrape.com/page/2/",
+    "finalUrl": "https://quotes.toscrape.com/page/2/",
+    "status": 200,
+    "contentType": "text/html; charset=utf-8",
+    "format": "html",
+    "title": "Quotes to Scrape",
+    "metadata": {
+      "language": "en"
+    },
+    "content": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n\t<meta charset=\"UTF-8\">\n\t<title>Quotes to Scrape</title>\n</head>\n<body>\n    <div class=\"container\">\n<div class=\"row\">\n    <div class=\"col-md-8\">\n\n    <div class=\"quote\" itemscope itemtype=\"http://schema.org/CreativeWork\">\n        <span class=\"text\" itemprop=\"text\">“It takes a great deal of bravery to stand up to our enemies, but just as much to stand up to our friends.”</span>\n        <span>by <small class=\"author\" itemprop=\"author\">J.K. Rowling</small>\n        <a href=\"/author/J-K-Rowling\">(about)</a>\n        </span>\n        <div class=\"tags\">\n            Tags:\n            <a class=\"tag\" href=\"/tag/courage/page/1/\">courage</a>\n            <a class=\"tag\" href=\"/tag/friends/page/1/\">friends</a>\n        </div>\n    </div>\n\n    <div class=\"quote\" itemscope itemtype=\"http://schema.org/CreativeWork\">\n        <span class=\"text\" itemprop=\"text\">“If you can&#39;t explain it to a six year old, you don&#39;t understand it yourself.”</span>\n        <span>by <small class=\"author\" itemprop=\"author\">Albert Einstein</small>\n        <a href=\"/author/Albert-Einstein\">(about)</a>\n        </span>\n        <div class=\"tags\">\n            Tags:\n            <a class=\"tag\" href=\"/tag/simplicity/page/1/\">simplicity</a>\n            <a class=\"tag\" href=\"/tag/understand/page/1/\">understand</a>\n        </div>\n    </div>\n\n    <nav>\n        <ul class=\"pager\">\n            <li class=\"previous\">\n                <a href=\"/page/1/\"><span aria-hidden=\"true\">&larr;</span> Previous</a>\n            </li>\n            <li class=\"next\">\n                <a href=\"/page/3/\">Next <span aria-hidden=\"true\">&rarr;</span></a>\n            </li>\n        </ul>\n    </nav>\n    </div>\n</div>\n    </div>\n</body>\n</html>\n",
+    "bytes": 13745,
+    "durationMs": 1652,
+    "engine": "tls",
+    "attempts": 1,
+    "geo": {
+      "country": null,
+      "state": null,
+      "city": null,
+      "rotation": "rotating"
+    }
+  },
+  "pagination": {}
+}
