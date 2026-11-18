@@ -1,0 +1,56 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    name: Python ${{ matrix.python }} on ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+        python: ['3.10', '3.11', '3.12', '3.13']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+      - name: Install
+        run: |
+          uv venv --python ${{ matrix.python }}
+          uv pip install -e . --group dev
+      - name: Lint
+        run: |
+          uv run --no-sync ruff check .
+          uv run --no-sync ruff format --check .
+      - name: Type check
+        run: uv run --no-sync mypy
+      - name: Tests
+        run: uv run --no-sync pytest --cov=scrapy_quanticdata --cov-report=term
+
+  lowest-scrapy:
+    name: Scrapy 2.11 (lowest supported)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+      - name: Install
+        run: |
+          uv venv --python 3.11
+          uv pip install -e . "scrapy==2.11.2" "w3lib<2.2" "twisted<24.10" pytest
+      - name: Tests
+        # The warnings-as-errors filter in pyproject.toml targets current Scrapy deprecations.
+        run: uv run --no-sync pytest -p no:cacheprovider -o filterwarnings=
+
+  package:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+      - run: uv build
+      - run: uvx twine check dist/*

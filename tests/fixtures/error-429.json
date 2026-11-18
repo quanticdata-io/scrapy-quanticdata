@@ -1,0 +1,10 @@
+{
+  "type": "error",
+  "message": "Too many requests for this account right now.",
+  "payload": {
+    "code": "rate_limited",
+    "retryable": true,
+    "billed": false,
+    "hint": "Wait for Retry-After seconds."
+  }
+}

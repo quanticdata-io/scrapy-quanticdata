@@ -1,0 +1,9 @@
+{
+  "type": "error",
+  "message": "This account has no residential Web Unlocker GB yet.",
+  "payload": {
+    "code": "no_credit",
+    "reason": "never_bought",
+    "buy_url": "https://app.quanticdata.io/plans"
+  }
+}

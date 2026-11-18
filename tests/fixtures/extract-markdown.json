@@ -1,0 +1,21 @@
+{
+  "type": "response",
+  "message": "Extraction successful",
+  "payload": {
+    "url": "https://quotes.toscrape.com/page/2/",
+    "finalUrl": "https://quotes.toscrape.com/page/2/",
+    "status": 200,
+    "contentType": "text/html; charset=utf-8",
+    "format": "markdown",
+    "title": "Quotes to Scrape",
+    "metadata": {
+      "language": "en"
+    },
+    "content": "# Quotes to Scrape\n\n“It takes a great deal of bravery to stand up to our enemies, but just as much to stand up to our friends.” by J.K. Rowling\n",
+    "bytes": 13745,
+    "durationMs": 1641,
+    "engine": "tls",
+    "attempts": 1
+  },
+  "pagination": {}
+}
