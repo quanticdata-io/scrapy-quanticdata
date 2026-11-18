@@ -16,7 +16,7 @@ import json
 import logging
 import os
 from collections.abc import Awaitable, Callable, Mapping
-from typing import TYPE_CHECKING, Any, cast
+from typing import TYPE_CHECKING, Any
 from urllib.parse import urlparse
 
 from scrapy import Request
@@ -81,6 +81,14 @@ class QuanticDataAPIError(QuanticDataError):
         self.payload: dict[str, Any] = dict(payload or {})
         self.code: str | None = self.payload.get("code")
         super().__init__(f"QuanticData API {status}{f' {self.code}' if self.code else ''}: {message}")
+
+
+def _replace(request: Request, **changes: Any) -> Request:
+    """``Request.replace`` with a return type that holds across Scrapy versions and their type stubs."""
+    new = request.replace(**changes)
+    if not isinstance(new, Request):  # pragma: no cover
+        raise TypeError(f"Request.replace() returned {type(new).__name__}")
+    return new
 
 
 async def _twisted_sleep(seconds: float) -> None:
@@ -225,26 +233,24 @@ class QuanticDataMiddleware:
         host = urlparse(request.url).hostname
         if host:
             meta.setdefault("download_slot", host)
-        return cast(
-            "Request",
-            request.replace(
-                url=f"{self.api_base}/scraper/{backend}",
-                method="POST",
-                body=json.dumps(body),
-                headers=Headers(
-                    {
-                        "Authorization": f"Bearer {self.api_key}",
-                        "Content-Type": "application/json",
-                        "Accept": "application/json",
-                        # This middleware reads the API answer before HttpCompressionMiddleware (590) would
-                        # decode it, so ask for an uncompressed body.
-                        "Accept-Encoding": "identity",
-                        "User-Agent": f"scrapy-quanticdata/{__version__}",
-                    }
-                ),
-                meta=meta,
-                dont_filter=True,
+        return _replace(
+            request,
+            url=f"{self.api_base}/scraper/{backend}",
+            method="POST",
+            body=json.dumps(body),
+            headers=Headers(
+                {
+                    "Authorization": f"Bearer {self.api_key}",
+                    "Content-Type": "application/json",
+                    "Accept": "application/json",
+                    # This middleware reads the API answer before HttpCompressionMiddleware (590) would
+                    # decode it, so ask for an uncompressed body.
+                    "Accept-Encoding": "identity",
+                    "User-Agent": f"scrapy-quanticdata/{__version__}",
+                }
             ),
+            meta=meta,
+            dont_filter=True,
         )
 
     def process_request(self, request: Request, spider: Spider | None = None) -> Request | None:
@@ -266,15 +272,13 @@ class QuanticDataMiddleware:
             meta.pop("dont_obey_robotstxt", None)
         else:
             meta["dont_obey_robotstxt"] = state["dont_obey_robotstxt"]
-        return cast(
-            "Request",
-            api_request.replace(
-                url=state["url"],
-                method=state["method"],
-                headers=Headers(state["headers"]),
-                body=state["body"],
-                meta=meta,
-            ),
+        return _replace(
+            api_request,
+            url=state["url"],
+            method=state["method"],
+            headers=Headers(state["headers"]),
+            body=state["body"],
+            meta=meta,
         )
 
     @staticmethod
@@ -326,7 +330,7 @@ class QuanticDataMiddleware:
                 logger.debug("QuanticData API %s for %s, retry %d in %.1fs", response.status, state["url"], attempt + 1, delay)
                 self._inc("retries")
                 await self._sleep(delay)
-                retry = cast("Request", request.copy())
+                retry = _replace(request)
                 retry.meta[_STATE_KEY] = {**state, "retries": attempt + 1}
                 return retry
         raise QuanticDataAPIError(response.status, message, payload)
